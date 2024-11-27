@@ -92,7 +92,7 @@ This project includes a `Makefile` to simplify common tasks. Below are the avail
 #### Create a Task
 **Request:**
 ```bash
-curl -X POST http://localhost:8080/task \
+curl -X POST http://localhost:8083/task \
 -H "Content-Type: application/json" \
 -d '{"title": "My Task", "description": "This is a test task", "status": "open"}'
 ```
@@ -104,7 +104,7 @@ Status Code: 201 Created
 #### Update a Task
 **Request:**
 ```bash
-curl -X POST http://localhost:8080/task/1 \
+curl -X POST http://localhost:8083/task/1 \
 -H "Content-Type: application/json" \
 -d '{"status": "in_progress"}'
 ```
@@ -125,7 +125,7 @@ Status Code: 200 Ok
 #### Delete a Task
 **Request:**
 ```bash
-curl -X DELETE http://localhost:8080/task/1
+curl -X DELETE http://localhost:8083/task/1
 ```
 
 **Response:**
@@ -134,7 +134,7 @@ Status Code: 204 No Content
 ```
 #### Get a Task
 ```bash
-curl -X GET http://localhost:8080/task/1
+curl -X GET http://localhost:8083/task/1
 ```
 **Response:**
 ```
@@ -150,7 +150,7 @@ Status Code: 200 Ok
 ```
 #### Get all Tasks
 ```bash
-curl -X GET http://localhost:8080/tasks
+curl -X GET http://localhost:8083/tasks
 ```
 **Response:**
 ```
