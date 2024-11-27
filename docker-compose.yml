@@ -1,0 +1,17 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: ../task-manager-ui
+      dockerfile: Dockerfile
+    ports:
+      - "3005:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ../task-manager-server
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083"
