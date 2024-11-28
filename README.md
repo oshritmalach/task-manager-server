@@ -12,69 +12,45 @@ The task-manager-server is a simple RESTapi service for managing tasks. It suppo
 
 ---
 
-## Installation
+## Getting Started
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/oshritmalach/task-manager-server.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd task-manager-server
-   ```
-3. Install dependencies (if any):
-   ```bash
-   go mod tidy
-   ```
+### Docker Instructions
+#### 1. Use Docker Compose
 
-4. Run the application:
-   ```bash
-   go run main.go
-   ```
-## Testing
-   Run the tests with:
-   ```bash
-    go test ./repository ./api/handler -v
-   ```
+```bash
+docker-compose up --build
+```
 
-## Docker Instructions
-
-### 1. Build and Run with Docker
+#### 2. Build and Run with Docker
 Build the Docker image and run the container:
 ```bash
 docker build -t task-manager-server .
 docker run -d -p 8083:8083 task-manager-server
 ```
 
-### 2. Use Docker Compose (Optional)
-If you prefer using Docker Compose, run:
+
+### Clone the Repository
+   ```bash
+   git clone https://github.com/oshritmalach/task-manager-server.git
+   cd task-manager-server
+   ```
+
+### 2. Run Locally (Optional)
+Install dependencies and start the server:
 ```bash
-docker-compose up --build
+  go mod tidy
+  go run main.go
 ```
 
+#### Run the tests with:
+   ```bash
+    go test ./repository ./api/handler -v
+   ```
+### Using the Makefile
 
-## Using the Makefile
-
-This project includes a `Makefile` to simplify common tasks. Below are the available commands and their usage:
-
-1. **Build the Project**
    ```bash
-   make build
+   make
    ```
-2. **Run the Project**
-   ```bash
-   make run
-   ```
-3. **Test the Project**
-   ```bash
-   make test
-   ```
-3. **Lint the Project**
-   ```bash
-   make lint
-   ```
-   
-   
 
 ## Usage
 
