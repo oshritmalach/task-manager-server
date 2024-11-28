@@ -3,7 +3,7 @@ build:
 run:
 	docker run -d -p 8083:8083 task-manager-server
 test:
-	 go test ./repository ./handler -v
+	 go test ./repository ./api/handler -v
 lint:
 	 golangci-lint run
 

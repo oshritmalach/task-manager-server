@@ -1,12 +1,12 @@
 package main
 
 import (
-	"Checkmarx/router"
+	"Checkmarx/api/router"
 	"log"
 	"net/http"
 )
 
-const serverPort = "8083"
+const serverPort = "8021"
 
 func main() {
 	r := router.NewRouter()
@@ -16,6 +16,7 @@ func main() {
 	}
 }
 
+// enableCors is a middleware function that configures Cross-Origin Resource Sharing (CORS) headers.
 func enableCors(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "*")

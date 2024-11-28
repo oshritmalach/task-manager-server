@@ -180,6 +180,12 @@ func TestAddAndUpdateTaskHandler(t *testing.T) {
 	assert.NoError(t, err, "failed to make request")
 	defer resp.Body.Close()
 
-	assert.Equal(t, http.StatusOK, resp.StatusCode, "expected status code %d, got %d", http.StatusOK, resp.StatusCode)
+	var updatedTask models.Task
+	err = json.NewDecoder(resp.Body).Decode(&updatedTask)
+	assert.NoError(t, err, "failed to decode response")
+
+	assert.Equal(t, "New Task", updatedTask.Title, "Task title does not match")
+	assert.Equal(t, "Task description", updatedTask.Description, "Task description does not match")
+	assert.Equal(t, "pending", updatedTask.Status, "Task status does not match")
 
 }

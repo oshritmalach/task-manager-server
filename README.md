@@ -20,7 +20,7 @@ The task-manager-server is a simple RESTapi service for managing tasks. It suppo
    ```
 2. Navigate to the project directory:
    ```bash
-   cd task-manager
+   cd task-manager-server
    ```
 3. Install dependencies (if any):
    ```bash
@@ -34,7 +34,7 @@ The task-manager-server is a simple RESTapi service for managing tasks. It suppo
 ## Testing
    Run the tests with:
    ```bash
-    go test ./repository ./handler -v
+    go test ./repository ./api/handler -v
    ```
 
 ## Docker Instructions

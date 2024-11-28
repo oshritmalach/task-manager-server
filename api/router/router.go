@@ -1,7 +1,7 @@
 package router
 
 import (
-	"Checkmarx/handler"
+	"Checkmarx/api/handler"
 	"Checkmarx/repository"
 	"Checkmarx/service"
 
