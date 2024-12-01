@@ -24,10 +24,11 @@ jobs:
           curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.54.2
       - name: Run linter
         run: make lint
-      - name: Build image
-        run: make build
-      - name: run image
-        run: make run
       - name: Run Tests
         run: make test
+      - name: Build image
+        run: make build
+      - name: Run image
+        run: make run
+
 

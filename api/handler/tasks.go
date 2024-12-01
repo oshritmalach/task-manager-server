@@ -64,7 +64,7 @@ func (h *TaskHandler) GetAllTasks(w http.ResponseWriter, r *http.Request) {
 	tasks := h.service.GetAllTasks()
 	w.Header().Set("Content-Type", "application/json")
 	if err := json.NewEncoder(w).Encode(tasks); err != nil {
-		respondWithError(w, http.StatusBadRequest, fmt.Sprintf("Failed to encode all tasks: %v", err))
+		respondWithError(w, http.StatusInternalServerError, fmt.Sprintf("Failed to encode all tasks: %v", err))
 		return
 	}
 }
