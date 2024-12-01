@@ -23,7 +23,7 @@ func (h *TaskHandler) AddTask(w http.ResponseWriter, r *http.Request) {
 	var err error
 	var newTask models.Task
 	if err = json.NewDecoder(r.Body).Decode(&newTask); err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Invalid request body")
+		respondWithError(w, http.StatusBadRequest, "Invalid request body")
 		return
 	}
 
@@ -64,7 +64,7 @@ func (h *TaskHandler) GetAllTasks(w http.ResponseWriter, r *http.Request) {
 	tasks := h.service.GetAllTasks()
 	w.Header().Set("Content-Type", "application/json")
 	if err := json.NewEncoder(w).Encode(tasks); err != nil {
-		respondWithError(w, http.StatusInternalServerError, fmt.Sprintf("Failed to encode all tasks: %v", err))
+		respondWithError(w, http.StatusBadRequest, fmt.Sprintf("Failed to encode all tasks: %v", err))
 		return
 	}
 }
@@ -78,7 +78,7 @@ func (h *TaskHandler) UpdateTask(w http.ResponseWriter, r *http.Request) {
 
 	var updatedTask models.Task
 	if err = json.NewDecoder(r.Body).Decode(&updatedTask); err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Invalid request body")
+		respondWithError(w, http.StatusBadRequest, "Invalid request body")
 		return
 	}
 
